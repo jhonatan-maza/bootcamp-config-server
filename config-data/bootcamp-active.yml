@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8081
 spring:
   data:
     mongodb:
@@ -9,9 +9,9 @@ spring:
       server:
         git:
           default-label: master
-          uri: https://github.com/jhonatan-maza/bootcamp-passive-savings
+          uri: https://github.com/jhonatan-maza/bootcamp-active
   application:
-    name: bootcamp-passive-savings
+    name: bootcamp-active
 
 eureka:
   client:
