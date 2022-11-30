@@ -1,0 +1,44 @@
+spring:
+  cloud:
+    gateway:
+      routes[0]:
+        id: bootcamp-customer
+        predicates: Path=/api/customer/**
+        filters: StripPrefix=2
+        uri: lb://bootcamp-customer
+      routes[1]:
+        id: bootcamp-passive
+        predicates: Path=/api/passive/**
+        filters: StripPrefix=2
+        uri: lb://bootcamp-passive
+      routes[2]:
+        id: bootcamp-active
+        predicates: Path=/api/active/**
+        filters: StripPrefix=2
+        uri: lb://bootcamp-active
+      routes[3]:
+        id: bootcamp-transaction
+        predicates: Path=/api/transaction/**
+        filters: StripPrefix=2
+        uri: lb://bootcamp-transaction
+
+      discovery:
+        locator:
+          enabled: 'true'
+    loadbalancer:
+      ribbon:
+        enabled: 'false'
+  application:
+    name: bootcamp-gateway
+
+server:
+  port: '8090'
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: 'true'
+    register-with-eureka: 'true'
+    service-url:
+      defaultZone: http://localhost:8761/eureka
