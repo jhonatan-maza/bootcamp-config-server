@@ -3,22 +3,22 @@ spring:
     gateway:
       routes[0]:
         id: bootcamp-customer
-        predicates: Path=/api/customer/**
-        filters: StripPrefix=2
+        predicates: Path=/customer/**
+        filters: StripPrefix=
         uri: lb://bootcamp-customer
       routes[1]:
         id: bootcamp-passive
-        predicates: Path=/api/passive/**
+        predicates: Path=/passive/**
         filters: StripPrefix=2
         uri: lb://bootcamp-passive
       routes[2]:
         id: bootcamp-active
-        predicates: Path=/api/active/**
+        predicates: Path=/active/**
         filters: StripPrefix=2
         uri: lb://bootcamp-active
       routes[3]:
         id: bootcamp-transaction
-        predicates: Path=/api/transaction/**
+        predicates: Path=/transaction/**
         filters: StripPrefix=2
         uri: lb://bootcamp-transaction
 
