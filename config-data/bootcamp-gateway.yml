@@ -24,10 +24,10 @@ spring:
 
       discovery:
         locator:
-          enabled: 'true'
+          enabled: true
     loadbalancer:
       ribbon:
-        enabled: 'false'
+        enabled: false
   application:
     name: bootcamp-gateway
 
