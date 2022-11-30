@@ -4,22 +4,22 @@ spring:
       routes[0]:
         id: bootcamp-customer
         predicates: Path=/customer/**
-        filters: StripPrefix=
+        filters: StripPrefix=1
         uri: lb://bootcamp-customer
       routes[1]:
         id: bootcamp-passive
         predicates: Path=/passive/**
-        filters: StripPrefix=2
+        filters: StripPrefix=1
         uri: lb://bootcamp-passive
       routes[2]:
         id: bootcamp-active
         predicates: Path=/active/**
-        filters: StripPrefix=2
+        filters: StripPrefix=1
         uri: lb://bootcamp-active
       routes[3]:
         id: bootcamp-transaction
         predicates: Path=/transaction/**
-        filters: StripPrefix=2
+        filters: StripPrefix=1
         uri: lb://bootcamp-transaction
 
       discovery:
