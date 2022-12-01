@@ -47,4 +47,4 @@ springdoc:
   swagger-ui:
     urls:
       - name: bootcamp-customer
-        url: /v3/api-docs/customer
+        url: /v3/api-docs/bootcamp-customer
