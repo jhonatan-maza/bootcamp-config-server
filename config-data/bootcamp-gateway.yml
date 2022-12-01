@@ -21,6 +21,10 @@ spring:
         predicates: Path=/transaction/**
         filters: StripPrefix=1
         uri: lb://bootcamp-transaction
+      routes[4]:
+        uri: http://localhost:${server.port}
+        predicates: Path=/v3/api-docs/**
+        filters: RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
       discovery:
         locator:
           enabled: true
