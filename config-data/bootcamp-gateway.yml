@@ -52,11 +52,5 @@ spring:
 springdoc:
   swagger-ui:
     urls:
-      - name: bootcamp-customer
-        url: bootcamp-customer
-      - name: bootcamp-passive
-        url: /v3/api-docs/bootcamp-passive
-      - name: bootcamp-active
-        url: /v3/api-docs/bootcamp-active
-      - name: bootcamp-transaction
-        url: /v3/api-docs/bootcamp-transaction
+      - name: customer
+        url: /v3/api-docs/customer
