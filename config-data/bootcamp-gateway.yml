@@ -37,10 +37,11 @@ spring:
         predicates: Path=/transaction/**
         filters: StripPrefix=1
         uri: lb://bootcamp-transaction
-      #routes[4]:
-        #id: openapi
-        #uri: http://localhost:${server.port}
-        #predicates: Path=/v3/api-docs/**
+      routes[4]:
+        id: openapi
+        uri: http://localhost:${server.port}
+        predicates: Path=/v3/api-docs/**
+        filters: StripPrefix=2
         #filters: RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
     loadbalancer:
       ribbon:
