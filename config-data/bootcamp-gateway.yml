@@ -37,11 +37,11 @@ spring:
         predicates: Path=/transaction/**
         filters: StripPrefix=1
         uri: lb://bootcamp-transaction
-      routes[4]:
-        id: openapi
-        uri: http://localhost:${server.port}
-        predicates: Path=/v3/api-docs/**
-        filters: RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+      #routes[4]:
+        #id: openapi
+        #uri: http://localhost:${server.port}
+        #predicates: Path=/v3/api-docs/**
+        #filters: RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
     loadbalancer:
       ribbon:
         enabled: false
@@ -53,3 +53,9 @@ springdoc:
     urls:
       - name: bootcamp-customer
         url: /v3/api-docs/bootcamp-customer
+      - name: bootcamp-passive
+        url: /v3/api-docs/bootcamp-passive
+      - name: bootcamp-active
+        url: /v3/api-docs/bootcamp-active
+      - name: bootcamp-transaction
+        url: /v3/api-docs/bootcamp-transaction
