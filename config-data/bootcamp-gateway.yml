@@ -14,6 +14,9 @@ eureka:
 spring:
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes[0]:
         id: bootcamp-customer
         predicates: Path=/customer/**
@@ -39,9 +42,6 @@ spring:
         uri: http://localhost:${server.port}
         predicates: Path=/v3/api-docs/**
         filters: RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
-      discovery:
-        locator:
-          enabled: true
     loadbalancer:
       ribbon:
         enabled: false
