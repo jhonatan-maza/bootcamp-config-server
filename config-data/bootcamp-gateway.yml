@@ -46,5 +46,5 @@ eureka:
 springdoc:
   swagger-ui:
     urls:
-      - name: customer
+      - name: bootcamp-customer
         url: /customer
