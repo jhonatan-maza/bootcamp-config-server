@@ -32,6 +32,12 @@ spring:
             - Path=/customer/**
           filters:
             - RewritePath=/customer/(?<path>.*), /$\{path}
+        - id: bootcamp-passive
+          uri: lb://bootcamp-passive
+          predicates:
+            - Path=/passive/**
+          filters:
+            - RewritePath=/passive/(?<path>.*), /$\{path}
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:
@@ -75,3 +81,5 @@ springdoc:
     urls:
       - name: bootcamp-customer
         url: /bootcamp-customer/api-docs/
+      - name: bootcamp-passive
+        url: /bootcamp-passive/api-docs/
