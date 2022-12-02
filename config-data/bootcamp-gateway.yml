@@ -13,6 +13,11 @@ eureka:
 
 spring:
   cloud:
+    config:
+      server:
+        git:
+          default-label: master
+          uri: https://github.com/jhonatan-maza/bootcamp-gateway
     gateway:
       discovery:
         locator:
