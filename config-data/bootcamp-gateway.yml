@@ -82,4 +82,4 @@ springdoc:
       - name: bootcamp-customer
         url: /bootcamp-customer/api-docs/
       - name: bootcamp-passive
-        url: /bootcamp-passive/api-docs/
+        url: /bootcamp-passive/v3/api-docs/
