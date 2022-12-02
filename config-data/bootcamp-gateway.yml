@@ -32,7 +32,6 @@ spring:
             - Path=/customer/**
           filters:
             - RewritePath=/customer/(?<path>.*), /$\{path}
-            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
         - id: passive-service
           uri: lb://bootcamp-passive
           predicates:
@@ -80,7 +79,7 @@ spring:
 springdoc:
   swagger-ui:
     urls:
-      - name: bootcamp-customer
-        url: /bootcamp-customer/api-docs/
+      - name: customer
+        url: /customer/api-docs/
       - name: bootcamp-passive
         url: /bootcamp-passive/v3/api-docs/
