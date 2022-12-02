@@ -26,13 +26,13 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: bootcamp-customer
+        - id: customer-service
           uri: lb://bootcamp-customer
           predicates:
             - Path=/customer/**
           filters:
             - RewritePath=/customer/(?<path>.*), /$\{path}
-        - id: bootcamp-passive
+        - id: passive-service
           uri: lb://bootcamp-passive
           predicates:
             - Path=/passive/**
