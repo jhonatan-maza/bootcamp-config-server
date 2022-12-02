@@ -31,7 +31,13 @@ spring:
           predicates:
             - Path=/customer/**
           filters:
-            - RewritePath=/customer/(?<path>.*), /$\{path}    
+            - RewritePath=/customer/(?<path>.*), /$\{path}
+        - id: openapi
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
         #routes[0]:
       #id: bootcamp-customer
         #predicates: Path=/customer/**
@@ -68,4 +74,4 @@ springdoc:
   swagger-ui:
     urls:
       - name: bootcamp-customer
-        url: /api-docs
+        url: /v3/api-docs/bootcamp-customer
