@@ -18,10 +18,13 @@ spring:
         git:
           default-label: master
           uri: https://github.com/jhonatan-maza/bootcamp-gateway
+    discovery:
+      enabled: true
     gateway:
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true
       routes[0]:
         id: bootcamp-customer
         predicates: Path=/customer/**
