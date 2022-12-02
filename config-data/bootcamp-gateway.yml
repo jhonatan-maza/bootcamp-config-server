@@ -63,3 +63,9 @@ spring:
         enabled: false
   application:
     name: bootcamp-gateway
+
+springdoc:
+  swagger-ui:
+    urls:
+      - name: bootcamp-customer
+        url: /api-docs/bootcamp-customer
