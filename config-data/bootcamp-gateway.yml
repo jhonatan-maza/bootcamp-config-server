@@ -25,31 +25,38 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-      routes[0]:
-        id: bootcamp-customer
-        predicates: Path=/customer/**
-        filters: StripPrefix=1
-        uri: lb://bootcamp-customer
-      routes[1]:
-        id: bootcamp-passive
-        predicates: Path=/passive/**
-        filters: StripPrefix=1
-        uri: lb://bootcamp-passive
-      routes[2]:
-        id: bootcamp-active
-        predicates: Path=/active/**
-        filters: StripPrefix=1
-        uri: lb://bootcamp-active
-      routes[3]:
-        id: bootcamp-transaction
-        predicates: Path=/transaction/**
-        filters: StripPrefix=1
-        uri: lb://bootcamp-transaction
-      routes[4]:
-        id: openapi
-        uri: http://localhost:${server.port}
-        predicates: Path=/v3/api-docs/**
-        filters: StripPrefix=2
+      routes:
+        - id: bootcamp-customer
+          uri: lb://bootcamp-customer
+          predicates:
+            - Path=/customer/**
+          filters:
+            - RewritePath=/customer/(?<path>.*), /$\{path}    
+        #routes[0]:
+      #id: bootcamp-customer
+        #predicates: Path=/customer/**
+        #filters: StripPrefix=1
+        #uri: lb://bootcamp-customer
+        #routes[1]:
+      #id: bootcamp-passive
+        #predicates: Path=/passive/**
+        #filters: StripPrefix=1
+        #uri: lb://bootcamp-passive
+        #routes[2]:
+      #vid: bootcamp-active
+        #predicates: Path=/active/**
+        #filters: StripPrefix=1
+        #uri: lb://bootcamp-active
+        #routes[3]:
+      #id: bootcamp-transaction
+        #predicates: Path=/transaction/**
+        #filters: StripPrefix=1
+        #uri: lb://bootcamp-transaction
+        #routes[4]:
+      #id: openapi
+        #uri: http://localhost:${server.port}
+        #predicates: Path=/v3/api-docs/**
+        #filters: StripPrefix=2
         #filters: RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
     loadbalancer:
       ribbon:
