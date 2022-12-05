@@ -100,10 +100,10 @@ springdoc:
       - name: customer
         url: /bootcamp-customer/api-docs/
       - name: passive
-        url: /bootcamp-passive/v3/api-docs/
+        url: /bootcamp-passive/api-docs/
       - name: active
-        url: /bootcamp-active/v3/api-docs/
+        url: /bootcamp-active/api-docs/
       - name: transaction
-        url: /bootcamp-transaction/v3/api-docs/
+        url: /bootcamp-transaction/api-docs/
       - name: transfer
-        url: /bootcamp-transfer/v3/api-docs/
+        url: /bootcamp-transfer/api-docs/
