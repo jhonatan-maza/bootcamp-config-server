@@ -38,6 +38,24 @@ spring:
             - Path=/passive/**
           filters:
             - RewritePath=/passive/(?<path>.*), /$\{path}
+        - id: active-service
+          uri: lb://bootcamp-active
+          predicates:
+            - Path=/active/**
+          filters:
+            - RewritePath=/active/(?<path>.*), /$\{path}
+        - id: transaction-service
+          uri: lb://bootcamp-transaction
+          predicates:
+            - Path=/transaction/**
+          filters:
+            - RewritePath=/transaction/(?<path>.*), /$\{path}
+        - id: transfer-service
+          uri: lb://bootcamp-transfer
+          predicates:
+            - Path=/transfer/**
+          filters:
+            - RewritePath=/transfer/(?<path>.*), /$\{path}
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:
@@ -83,3 +101,9 @@ springdoc:
         url: /bootcamp-customer/api-docs/
       - name: passive
         url: /bootcamp-passive/v3/api-docs/
+      - name: active
+        url: /bootcamp-active/v3/api-docs/
+      - name: transaction
+        url: /bootcamp-transaction/v3/api-docs/
+      - name: transfer
+        url: /bootcamp-transfer/v3/api-docs/
