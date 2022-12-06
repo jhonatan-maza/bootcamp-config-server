@@ -15,10 +15,8 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins: "*"
-            allowedHeaders: "*"
             allowedMethods:
               - GET
-              - POST
   application:
     name: bootcamp-customer
 
