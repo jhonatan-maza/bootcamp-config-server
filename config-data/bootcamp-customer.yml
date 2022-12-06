@@ -10,6 +10,15 @@ spring:
         git:
           default-label: master
           uri: https://github.com/jhonatan-maza/bootcamp-customer
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
   application:
     name: bootcamp-customer
 
