@@ -21,6 +21,14 @@ spring:
     discovery:
       enabled: true
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
       discovery:
         locator:
           enabled: true
@@ -30,7 +38,6 @@ spring:
           uri: lb://bootcamp-customer
           predicates:
             - Path=/customer/**
-            - Method=GET,POST
           filters:
             - RewritePath=/customer/(?<path>.*), /$\{path}
         - id: passive-service
