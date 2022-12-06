@@ -30,6 +30,7 @@ spring:
           uri: lb://bootcamp-customer
           predicates:
             - Path=/customer/**
+            - Method=GET,POST
           filters:
             - RewritePath=/customer/(?<path>.*), /$\{path}
         - id: passive-service
