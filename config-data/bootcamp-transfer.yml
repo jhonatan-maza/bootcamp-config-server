@@ -3,15 +3,15 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/transfer?retryWrites=true&w=majority
+      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/movement?retryWrites=true&w=majority
   cloud:
     config:
       server:
         git:
           default-label: master
-          uri: https://github.com/jhonatan-maza/bootcamp-transfer
+          uri: https://github.com/jhonatan-maza/bootcamp-balance
   application:
-    name: bootcamp-transfer
+    name: bootcamp-balance
 
 eureka:
   client:
@@ -26,7 +26,7 @@ eureka:
 
 resilience4j.circuitbreaker:
   instances:
-    transfer:
+    balance:
       registerHealthIndicator: true
       slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3

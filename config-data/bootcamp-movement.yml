@@ -3,15 +3,15 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/transaction?retryWrites=true&w=majority
+      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/movement?retryWrites=true&w=majority
   cloud:
     config:
       server:
         git:
           default-label: master
-          uri: https://github.com/jhonatan-maza/bootcamp-transaction
+          uri: https://github.com/jhonatan-maza/bootcamp-movement
   application:
-    name: bootcamp-transaction
+    name: bootcamp-movement
 
 eureka:
   client:
@@ -25,7 +25,7 @@ eureka:
 
 resilience4j.circuitbreaker:
   instances:
-    transaction:
+    movement:
       registerHealthIndicator: true
       slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3
