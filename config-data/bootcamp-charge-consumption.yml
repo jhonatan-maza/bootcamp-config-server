@@ -9,9 +9,9 @@ spring:
       server:
         git:
           default-label: master
-          uri: https://github.com/jhonatan-maza/bootcamp-load-balance
+          uri: https://github.com/jhonatan-maza/bootcamp-charge-consumption
   application:
-    name: bootcamp-load-balance
+    name: bootcamp-charge-consumption
 
 eureka:
   client:
@@ -26,7 +26,7 @@ eureka:
 
 resilience4j.circuitbreaker:
   instances:
-    load-balance:
+    charge-consumption:
       registerHealthIndicator: true
       slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3
